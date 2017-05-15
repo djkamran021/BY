@@ -17,9 +17,9 @@ install() {
 		sudo apt-get install libnotify-dev -y
 		wget https://valtman.name/files/telegram-cli-1222
 		mv telegram-cli-1222 tgcli
-		chmod +777 tgcli
+		chmod 777 tgcli
 		cd ..
-		chmod +777 bot
+		chmod 777 bot
 }
 
 function print_logo() {
