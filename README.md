@@ -23,7 +23,7 @@
 cd $HOME
 git clone https://github.com/djkamran021/BY.git
 cd BY
-chmod +777 start.sh
+chmod 777 start.sh
 ./start.sh install
 ./start.sh 
 # Enter a phone number & confirmation code.
