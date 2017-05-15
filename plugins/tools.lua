@@ -1004,7 +1004,7 @@ end
 
 if (matches[1] == 'createsuper' or matches[1] == 'ساخت سوپر گروه') and is_admin(msg) then
 local text = matches[2]
-tdcli.createNewChannelChat(text, 1, '@BeyondTeam', (function(b, d) tdcli.addChatMember(d.id_, msg.from.id, 0, dl_cb, nil) end), nil)
+tdcli.createNewChannelChat(text, 1, ' ', (function(b, d) tdcli.addChatMember(d.id_, msg.from.id, 0, dl_cb, nil) end), nil)
    if not lang then 
 return '_SuperGroup Has Been Created and_ [`'..msg.from.id..'`] _Joined To This SuperGroup._'
   else
@@ -1099,11 +1099,11 @@ end
   if is_sudo(msg) then
 	if (matches[1]:lower() == "sendfile" or matches[1] == 'ارسال فایل') and matches[2] and matches[3] then
 		local send_file = "./"..matches[2].."/"..matches[3]
-		tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, send_file, '@BeyondTeam', dl_cb, nil)
+		tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, send_file, ' ', dl_cb, nil)
 	end
 	if matches[1]:lower() == "sendplug" or matches[1] == 'ارسال پلاگین' and matches[2] then
 	    local plug = "./plugins/"..matches[2]..".lua"
-		tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, plug, '@BeyondTeam', dl_cb, nil)
+		tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, plug, ' ', dl_cb, nil)
     end
   end
 
@@ -1552,4 +1552,4 @@ patterns_fa = {
 },
 run = run, pre_process = pre_process
 }
--- #End By @BeyondTeam
+-- #End By  
