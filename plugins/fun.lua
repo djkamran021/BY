@@ -66,7 +66,7 @@ local function get_weather(location)
 	local weather = json:decode(b)
 	local city = weather.name
 	local country = weather.sys.country
-	local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n @BeyondTeam :)'
+	local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n '
 	local conditions = 'شرایط فعلی آب و هوا : '
 	if weather.weather[1].main == 'Clear' then
 		conditions = conditions .. 'آفتابی☀'
@@ -88,7 +88,7 @@ local function calc(exp)
 	b,c = http.request(url)
 	text = nil
 	if c == 200 then
-    text = 'Result = '..b..'\n____________________\n @BeyondTeam :)'
+    text = 'Result = '..b..'\n____________________\n '
 	elseif c == 400 then
 		text = b
 	else
@@ -151,7 +151,7 @@ end
 		text = text..'\nغروب آفتاب: '..data.Sunset
 		text = text..'\nاذان مغرب: '..data.Maghrib
 		text = text..'\nعشاء : '..data.Isha
-		text = text..'\n@BeyondTeam\n'
+		text = text..'\n \n'
 		return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'html')
 	end
 --------------------------------
@@ -237,7 +237,7 @@ if matches[1]:lower() == 'voice' or matches[1]:lower() == "تبدیل به صد�
       else
   local url = "http://tts.baidu.com/text2audio?lan=en&ie=UTF-8&text="..textc
   local file = download_to_file(url,'BD-UniQue.mp3')
- 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@BeyondTeam', dl_cb, nil)
+ 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, ' ', dl_cb, nil)
    end
 end
 
@@ -245,7 +245,7 @@ end
 	if matches[1]:lower() == "tr" or matches[1]:lower() == "ترجمه" then 
 		url = https.request('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang='..URL.escape(matches[2])..'&text='..URL.escape(matches[3]))
 		data = json:decode(url)
-		return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n @BeyondTeam :)'
+		return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n  :)'
 	end
 --------------------------------
 	if matches[1]:lower() == 'short' or matches[1]:lower() == "لینک کوتاه" then
@@ -307,7 +307,7 @@ end
 		local url = "https://assets.imgix.net/examples/clouds.jpg?blur=150&w="..w.."&h="..h.."&fit=crop&txt="..eq.."&txtsize="..txtsize.."&txtclr="..txtclr.."&txtalign=middle,center&txtfont=Futura%20Condensed%20Medium&mono=ff6598cc"
 		local receiver = msg.to.id
 		local  file = download_to_file(url,'text.jpg')
-		tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, file, "@BeyondTeam", dl_cb, nil)
+		tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, file, " ", dl_cb, nil)
 	end
 
 
