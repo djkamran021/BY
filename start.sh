@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
-cd $HOME/BDReborn
+cd $HOME/BY
 
 install() {
 	    cd libs
 		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 		sudo apt-get install g++-4.7 -y c++-4.7 -y
+		sudo apt-get install libreadline6
 		sudo apt-get update
 		sudo apt-get upgrade
+		sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev -y
 		sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y
 		sudo apt-get install screen -y
 		sudo apt-get install tmux -y
@@ -16,26 +18,19 @@ install() {
 		sudo apt-get install libnotify-dev -y
 		wget https://valtman.name/files/telegram-cli-1222
 		mv telegram-cli-1222 tgcli
-		chmod +x tgcli
+		chmod +777 tgcli
 		cd ..
-		chmod +x bot
+		chmod +777 bot
 }
 
 function print_logo() {
-	green "          ____  ____     _____"
-	green "         |  _ )|  _ \   |_   _|___ ____   __  __"
-	green "         |  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
-	green "         |____/|____/     |_|\____/\_____|_/\/\_|"
+	green "          "
 	echo -e "\n\e[0m"
 }
 
 function logo_play() {
     declare -A txtlogo
     seconds="0.010"
-    txtlogo[1]=" ____  ____     _____"
-    txtlogo[2]="|  _ )|  _ \   |_   _|___ ____   __  __"
-    txtlogo[3]="|  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
-    txtlogo[4]="|____/|____/     |_|\____/\_____|_/\/\_|"
     printf "\e[31m\t"
     for i in ${!txtlogo[@]}; do
         for x in `seq 0 ${#txtlogo[$i]}`; do
@@ -50,12 +45,7 @@ function logo_play() {
 
 function beyondteam() {
 	echo -e "\e[0m"
-	green "     >>>>                       We Are Not Attacker                             "
-	green "     >>>>                       We Are Not Alliance                             "
-	white "     >>>>                       We Are Programmer                               "
-	white "     >>>>                       We Are The Best                                 "
-	red   "     >>>>                       We Are Family                                   "
-	red   "     >>>>                       @BeyondTeam                                     "
+	green "     >>>>                       در حال نصب                             "
 	echo -e "\e[0m"
 }
 
@@ -74,12 +64,12 @@ update() {
 
 if [ "$1" = "install" ]; then
 	print_logo
-	beyondteam
+	
 	logo_play
 	install
 elif [ "$1" = "update" ]; then
 	logo_play
-	beyondteam
+	
 	update
 else
 if [ ! -f ./libs/tgcli ]; then
