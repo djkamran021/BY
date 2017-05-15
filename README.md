@@ -1,5 +1,6 @@
-# [storevps](https://telegram.me/storevps)
-# `edit BDbeyond`
+# [channel](https://telegram.me/storevps)
+# [site](https://storevps.net/)
+
 **An advanced and powerful administration bot based on NEW TG-CLI
 
 
@@ -31,3 +32,4 @@ chmod +777 start.sh
 chmod 777 auto.sh
 screen ./auto.sh
 ```
+# `edit BDbeyond`
